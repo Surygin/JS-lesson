@@ -6,15 +6,16 @@
 // Напишите условие для покупки и выведите в консоль результат.
 
 // функцию нашел в интернете =)
+// с этой функцией - это превращается в приложение для тестирования =) как интересно!
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
-const userBalanceUSD = 1000;
-const userBalanceBonus = 100;
-const isBanned = false;
-const isExist = false;
-const isSelling = true;
+const userBalanceUSD = randomIntFromInterval(990, 1000);
+const userBalanceBonus = randomIntFromInterval(95, 100);
+const isBanned = randomIntFromInterval(0, 1);
+const isExist = randomIntFromInterval(0, 1);
+const isSelling = randomIntFromInterval(0, 1);
 
 // Этот вариант я разрабатывал дольше всего. Очень запутано. Не читабельно! поддерживать такой код - Ад =)
 console.log(!isBanned ? !isExist ? isSelling ? userBalanceUSD >= 1000 ? "Вы можете купить игру за деньги!" : userBalanceBonus >= 100 ? 'Вы можете купить игру за бонусы.' : 'вы не можете купить игру' : 'игры нет в продаже' : 'Игра куплена!' : 'Вы забаненны!');
