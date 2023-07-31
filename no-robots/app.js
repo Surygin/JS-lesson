@@ -30,4 +30,3 @@ switch (result) {
 
 console.log(Number(result));
 
-
