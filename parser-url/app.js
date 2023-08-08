@@ -1,5 +1,7 @@
 const url = 'https://stepik.org/course/63054/promo';
 
+console.log('Исходный URL - ', url);
+
 const splitUrl = url.split('/');
 
 const [protocolType] = splitUrl[0].split(':');
