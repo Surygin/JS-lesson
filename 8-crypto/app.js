@@ -7,6 +7,7 @@ function crypto(password){
     
     for( i = 0; i < arr.length; i++){
         cryptoPass.push(arr[i].charCodeAt(0));
+        
 
     }
 
@@ -32,6 +33,6 @@ function checkPass(cryptoPass, password){
 
 
 // запуск
-crypto(password);
+console.log(crypto(password));
 
 console.log(checkPass(crypto(password), password));
