@@ -1,5 +1,5 @@
 const app = document.getElementById('app');
-const userLang = navigator.language || navigator.userLanguage; 
+const userLang = navigator.language;
 
 const msgRu = `Привет разработчик!`;
 const msgEn = `Hello developer!`;
