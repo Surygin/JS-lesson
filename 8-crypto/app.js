@@ -7,10 +7,7 @@ function crypto(password){
     
     for( i = 0; i < arr.length; i++){
         cryptoPass.push(arr[i].charCodeAt(0));
-        
-
     }
-
     return cryptoPass;
 }
 
@@ -22,15 +19,10 @@ function checkPass(cryptoPass, password){
         arr.push(String.fromCharCode(cryptoPass[i]));
     }
 
-    const checkPass = arr.join('');
+    const check = arr.join('');
 
-    if(checkPass != password){
-        return false;
-    }
-
-    return true;
+    return check === password
 }
-
 
 // запуск
 console.log(crypto(password));
