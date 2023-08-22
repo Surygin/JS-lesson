@@ -1,6 +1,6 @@
-const hasLicense = false;
+const hasLicense = true;
 const age = 18;
-const isDrink = false;
+const isDrunk = false;
 
 
 // const hasLicense = randomIntFromInterval(0, 1);
@@ -12,7 +12,7 @@ const isDrink = false;
 // function randomIntFromInterval(min, max) { // min and max included
 //     return Math.floor(Math.random() * (max - min + 1) + min)
 //   }
-console.log(age >= 18 && hasLicense && isDrink ? 'Можно ехать' : 'Нельзя за руль');
+console.log(age >= 18 && hasLicense && !isDrunk ? 'Можно ехать' : 'Нельзя за руль');
 // console.log(age >= 18 ? hasLicense ? !isDrink ? 'Можно ехать!' : 'Нельзя за руль, вы пьяны!' : 'Нельзя за руль, нет прав!' : 'Нельзя за руль, вам нет 18!');
 
 // Прошлая практика, на проверку прав, была сложнее. =)
