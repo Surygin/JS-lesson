@@ -13,16 +13,3 @@ function sortArray(arr){
 }
 
 sortArray(numbers);
-
-// function sortArray(arr){
-//     for(let el of arr){
-//         for (let item of arr){
-//             const [num1, num2] = [el, item];
-//             // console.log([num1, num2])
-//             if (el < item){
-//                 [item, el] = [num1, num2]
-//             }
-//         }
-//     }
-//     console.log(arr);
-// }
