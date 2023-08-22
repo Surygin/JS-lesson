@@ -8,11 +8,11 @@ function checkNum(num){
 
 function cleanArray(arr, func){
     for (let i = 0; i<arr.length-1; i++){
-        if (checkNum(arr[i])){
+        if (func(arr[i])){
             sortNumbers.push(arr[i]);
         }
     }
     return sortNumbers;
 }
 
-console.log(cleanArray(numbers, delNum));
+console.log(cleanArray(numbers, checkNum));
