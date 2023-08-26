@@ -4,7 +4,7 @@ const urls = [];
 const sortArr = data.filter(el => el.length === 10);
 const date1 = sortArr.filter(el => el.split('').find(el => el === '-'));
 const date2 = sortArr.filter(el => el.split('').find(el => el === '/'));
-const date3 = date2.map(el => el.split('/').map(el => console.log(el)));
+const date3 = date2.map(el => el.split('/'));
 console.log(date3);
 // console.log(date1, date2);
 
