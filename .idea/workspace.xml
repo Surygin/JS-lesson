@@ -52,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "feature/4-navigator-new",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,7 +91,7 @@
       <workItem from="1692909410520" duration="1292000" />
       <workItem from="1692963576716" duration="2375000" />
       <workItem from="1693046906267" duration="1081000" />
-      <workItem from="1693066085751" duration="5981000" />
+      <workItem from="1693066085751" duration="6088000" />
     </task>
     <servers />
   </component>
