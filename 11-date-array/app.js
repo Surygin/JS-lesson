@@ -1,13 +1,27 @@
 const data = ['10-02-2022','07-09-1991', 'тест', 'kjh-d-sf-g', '11/12/2023', '00/13/2022', '41/12/2023'];
-const urls = [];
 
-const sortArr = data.filter(el => el.length === 10);
-const dmY = sortArr.filter(el => el.split('').find(el => el === '-'));
-const mdY = sortArr.filter(el => el.split('').find(el => el === '/'));
-// const date3 = date2.map(el => el.split('/'));
-// console.log(date3.map(el => el.join('-')));
-console.log(dmY, mdY);
+function getDate(urls){
+    const sortArr = data.filter(el => el.length === 10);
+    const dmY = sortArr.filter(el => el.split('').find(el => el === '-'));
+    const mdY = sortArr.filter(el => el.split('').find(el => el === '/'));
+    function mdyToDmy(arr){
+        arr.map(el => el.split('/')).map(el => {
+            [m, d, Y] = el;
+            dmY.push([d, m, Y].join('-'));
+        });
+    }
 
+    mdyToDmy(mdY);
+
+    console.log(dmY);
+}
+
+getDate(data);
+
+// const convertDate = mdY.map(el => el.split('/')).map(el => {
+//     [m, d, Y] = el;
+//     return [d, m, Y].join('-');
+// });
 
 // const forCheckDate = date1.map(el => el.split('-'));
 // date1.map(el => console.log(typeof(el.split('-'))));
