@@ -5,6 +5,15 @@ const users = [
     {name: 'Петя', age: 25},
 ];
 
-function sortUsers(){
-    
+function sortUsersByAge(arr){
+    for(let i = 0; i < arr.length; i++){
+        for (let j = 0; j < arr.length; j++){
+            if (arr[i].age < arr[j].age){
+                [arr[j].age, arr[i].age] = [arr[i].age, arr[j].age]
+            }
+        }
+    }
+    console.log(arr);
 }
+
+sortUsersByAge(users);
