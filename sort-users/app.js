@@ -17,3 +17,8 @@ function sortUsersByAge(arr){
 }
 
 sortUsersByAge(users);
+
+// Второй вариант (проще)
+console.log(users.sort((a,b) => {
+    return a.age - b.age
+}));
