@@ -5,3 +5,6 @@ const users = [
     {name: 'Петя', age: 25},
 ];
 
+function sortUsers(){
+    
+}
