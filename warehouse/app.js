@@ -4,9 +4,17 @@
 
 const warehouse = {
     goods: [],
-    findGoodById: function () {},
-    addGood: function () {},
-    getWeightKg: function () {},
+    findGoodById: function (id) {
+        this.goods.map(el => {
+            return 'jhg';
+        })
+    },
+    addGood: function (item) {
+        this.goods.push(item);
+    },
+    getWeightKg: function () {
+
+    },
 };
 
 /* Товары */
@@ -29,3 +37,9 @@ const paper = {
     id: 3,
     color: 'red'
 }
+
+warehouse.addGood(car);
+warehouse.addGood(car);
+warehouse.addGood(car);
+
+console.log(warehouse.goods);
