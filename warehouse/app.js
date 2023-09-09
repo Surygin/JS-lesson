@@ -5,14 +5,21 @@
 const warehouse = {
     goods: [],
     findGoodById: function (id) {
-        // console.log(this.goods.map(el => Number(el.id) === id ? el : 'no'));
         console.log(this.goods.filter(el => Number(el.id) === id));
     },
     addGood: function (item) {
         this.goods.push(item);
     },
     getWeightKg: function () {
-
+        const sumKg = [];
+        this.goods.map(el => {
+            if (el?.weight?.kg){
+                sumKg.push(Number(el.weight.kg));
+            }
+        });
+        return sumKg.reduce((acc, currentValue) => {
+            return  acc += currentValue;
+        }, 0);
     },
 };
 
@@ -42,5 +49,5 @@ warehouse.addGood(car);
 warehouse.addGood(chair);
 warehouse.addGood(chair);
 warehouse.addGood(paper);
-
-warehouse.findGoodById(1);
+warehouse.findGoodById(2);
+console.log(warehouse.getWeightKg());
