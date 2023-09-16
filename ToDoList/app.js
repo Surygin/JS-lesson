@@ -21,15 +21,22 @@ const ToDoList = {
       }
     });
   },
+  sortTaskByPriority: function (){
+    console.log(this.taskList.sort((a, b) => {
+      return a.priority - b.priority;
+    }));
+  },
 };
 
 ToDoList.addTask('Написать задачу', 1);
 ToDoList.addTask('накормить кота', 2);
 
 ToDoList.removeTask(1);
-ToDoList.addTask('Написать задачу', 1);
+ToDoList.addTask('Написать задачу', 3);
 ToDoList.addTask('Написать задачу', 1);
 
 ToDoList.howMatch();
 
 ToDoList.taskList.map(el => console.log(el));
+
+ToDoList.sortTaskByPriority();
