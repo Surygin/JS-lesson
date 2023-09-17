@@ -26,16 +26,26 @@ const ToDoList = {
       return a.priority - b.priority;
     }));
   },
+  editTaskById: function (id, name){
+    this.taskList.map(el => {
+      if (el.id === id){
+        el.name = name;
+      }
+    });
+  },
 };
 
 ToDoList.addTask('Написать задачу', 1);
 ToDoList.addTask('накормить кота', 2);
-
-ToDoList.removeTask(1);
 ToDoList.addTask('Написать задачу', 3);
+ToDoList.removeTask(3);
+ToDoList.addTask('накормить кота', 2);
+ToDoList.addTask('накормить кота', 2);
 ToDoList.addTask('Написать задачу', 1);
 
 ToDoList.howMatch();
+
+ToDoList.editTaskById(2, 'Отнять еду у кота')
 
 ToDoList.taskList.map(el => console.log(el));
 
