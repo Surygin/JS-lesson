@@ -26,10 +26,17 @@ const ToDoList = {
       return a.priority - b.priority;
     }));
   },
-  editTaskById: function (id, name){
+  editTaskNameById: function (id, name){
     this.taskList.map(el => {
       if (el.id === id){
         el.name = name;
+      }
+    });
+  },
+  editTaskPriorityById: function (id, priority){
+    this.taskList.map(el => {
+      if (el.id === id){
+        el.priority = priority;
       }
     });
   },
@@ -45,7 +52,8 @@ ToDoList.addTask('Написать задачу', 1);
 
 ToDoList.howMatch();
 
-ToDoList.editTaskById(2, 'Отнять еду у кота')
+ToDoList.editTaskNameById(2, 'Отнять еду у кота');
+ToDoList.editTaskPriorityById(2, 3);
 
 ToDoList.taskList.map(el => console.log(el));
 
