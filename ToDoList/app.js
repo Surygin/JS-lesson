@@ -11,9 +11,6 @@ const ToDoList = {
       priority: priority,
     });
   },
-  howMatch: function (){ //метод для отладки - после удалить
-    console.log(this.taskList.length);
-  },
   removeTask: function (id){
     this.taskList.map(el => {
       if (el.id === id){
@@ -49,9 +46,6 @@ ToDoList.removeTask(3);
 ToDoList.addTask('накормить кота', 2);
 ToDoList.addTask('накормить кота', 2);
 ToDoList.addTask('Написать задачу', 1);
-
-ToDoList.howMatch();
-
 ToDoList.editTaskNameById(2, 'Отнять еду у кота');
 ToDoList.editTaskPriorityById(2, 3);
 
