@@ -15,7 +15,7 @@ const ToDoList = {
     this.taskList.map(el => {
       if (el.id === id){
         this.taskList.slice((id-1), id)
-      };
+      }
     });
   },
   sortTaskByPriority: function (){
