@@ -5,11 +5,12 @@ const ToDoList = {
   id: 1,
   taskList: [],
 
-  addTask(name, priority){
+  addTask(task){
     this.taskList.push({
       id: this.id++,
-      name: name,
-      priority: priority,
+      name: task.name ? task.name : '',
+      description: task.description ? task.description : '',
+      priority: task.priority ? task.priority : 0,
     });
   },
   removeTask(id){
@@ -24,27 +25,41 @@ const ToDoList = {
   editTaskById(id, task){
     this.taskList.map(el => {
       if (el.id === id){
-        el.name = task.name;
-        el.priority = task.priority;
+        task.name ? el.name = task.name : false;
+        task.description ? el.description = task.description : false;
+        task.priority ? el.priority = task.priority : false;
       }
     });
   },
 };
 
-ToDoList.addTask('Написать задачу', 1);
-ToDoList.addTask('накормить кота', 2);
-ToDoList.addTask('Написать задачу 2', 3);
-ToDoList.removeTask(3);
-ToDoList.addTask('накормить кота 2', 2);
-ToDoList.addTask('накормить кота 3', 2);
-ToDoList.removeTask(2);
-ToDoList.addTask('Написать книгу', 1);
-ToDoList.removeTask(5);
-ToDoList.addTask('Написать книгу 2', 1);
-ToDoList.addTask('Написать книгу 3', 1);
-ToDoList.editTaskById(4, {name: 'Отнять еду у кота', priority: 1});
-ToDoList.addTask('Написать книгу 4', 1);
-console.log('_________________')
-ToDoList.taskList.map(el => console.log(el));
-console.log('_________________')
-ToDoList.sortTaskByPriority();
+const tasks = ToDoList;
+const task1 = {
+  description: 'Взять кота на руки и почесать ему за ухом',
+  priority: 3,
+}
+const task2 = {
+  name: 'сварить кашу',
+  description: 'Сварить гречневую кашу',
+  priority: 1,
+}
+const task3 = {
+  name: 'Погладить вещи',
+  description: 'достать гладильную доску и погладить вещи',
+  priority: 2,
+}
+const task4 = {
+  description: 'Взять кота на руки и почесать ему за ухом',
+}
+
+tasks.addTask(task1);
+tasks.addTask(task2);
+tasks.addTask(task3);
+tasks.addTask(task4);
+tasks.editTaskById(2, {name: 'приготовить завтрак', description: 'пожарить омлет'})
+tasks.removeTask(1);
+
+console.log('________Просмотр содержимого_________')
+tasks.taskList.map(el => console.log(el));
+console.log('________Сортировка по приоритету_________')
+tasks.sortTaskByPriority();
