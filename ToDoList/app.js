@@ -14,14 +14,9 @@ const ToDoList = {
   removeTask: function (id){
     this.taskList.map(el => {
       if (el.id === id){
-        this.taskList.splice((id - 1), id);
-      }
+        this.taskList.slice((id-1), id)
+      };
     });
-    // this.taskList.map(el => {
-    //   if (el.id === id){
-    //     this.taskList.splice((id - 1), id);
-    //   }
-    // });
   },
   sortTaskByPriority: function (){
     console.log(this.taskList.sort((a, b) => {
@@ -48,8 +43,6 @@ ToDoList.removeTask(2);
 ToDoList.addTask('Написать книгу', 1);
 ToDoList.removeTask(5);
 ToDoList.editTaskById(4, {name: 'Отнять еду у кота', priority: 1});
-// ToDoList.editTaskNameById(2, 'Отнять еду у кота');
-// ToDoList.editTaskPriorityById(2, 3);
 
 ToDoList.taskList.map(el => console.log(el));
 
