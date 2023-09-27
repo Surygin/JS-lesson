@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17 calc</title>
+</head>
+<body>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: sans-serif;
+  }
+  .block{
+      display: block;
+  }
+  .info{
+      margin: 30px 0;
+      text-align: center;
+  }
+  .calc{
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(49deg, rgba(2,0,36,1) 0%, rgba(76,19,157,1) 35%, rgba(255,255,255,1) 100%);
+    -webkit-box-shadow: 4px 4px 28px 10px rgba(61, 50, 152, 0.2);
+    -moz-box-shadow: 4px 4px 28px 10px rgba(61, 50, 152, 0.2);
+    box-shadow: 4px 4px 28px 10px rgba(61, 50, 152, 0.2);
+  }
+  .calc__ui{
+      display: flex;
+      /*flex-direction: column;*/
+  }
+  .calc__ui input{
+      margin: 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+  }
+  .calc__ui button{
+      display: flex;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      width: 33px;
+      /*height: 35px;*/
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+      cursor: pointer;
+  }
+  .calc__ui-left{
+      display: flex;
+      flex-direction: column;
+  }
+  .calc__ui-right{
+      width: 86px;
+      display: flex;
+      flex-wrap: wrap;
+  }
+</style>
+<div class="info">
+    <h1><span class="block">Последнее вычисление:</span> <span id="lastResult"></span></h1>
+</div>
+<div class="calc">
+    <div class="calc__ui">
+        <div class="calc__ui-left">
+            <input type="text" id="num1" class="inputNum" placeholder="Введите первое число">
+            <input type="text" id="num2" class="inputNum" placeholder="Введите второе число">
+        </div>
+        <!-- /.calc__ui-left -->
+        <div class="calc__ui-right">
+            <button class="btn" data-value="+">+</button>
+            <button class="btn" data-value="-">-</button>
+            <button class="btn" data-value="*">*</button>
+            <button class="btn" data-value="/">/</button>
+        </div>
+        <!-- /.calc__ui-right -->
+    </div>
+    <!-- /.calc__ui -->
+</div>
+<!-- /.calc -->
+<div class="info">
+    <h1>Результат: <span id="result"></span></h1>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
