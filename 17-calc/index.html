@@ -21,6 +21,13 @@
     align-content: center;
     font-family: sans-serif;
   }
+  .block{
+      display: block;
+  }
+  .info{
+      margin: 30px 0;
+      text-align: center;
+  }
   .calc{
     margin-bottom: 30px;
     padding: 40px;
@@ -64,6 +71,9 @@
       flex-wrap: wrap;
   }
 </style>
+<div class="info">
+    <h1><span class="block">Последнее вычисление:</span> <span id="lastResult"></span></h1>
+</div>
 <div class="calc">
     <div class="calc__ui">
         <div class="calc__ui-left">
@@ -72,17 +82,17 @@
         </div>
         <!-- /.calc__ui-left -->
         <div class="calc__ui-right">
-            <button id="addition" class="btn" data-value="+">+</button>
-            <button id="subtraction" class="btn" data-value="-">-</button>
-            <button id="multiplication" class="btn" data-value="*">*</button>
-            <button id="division" class="btn" data-value="/">/</button>
+            <button class="btn" data-value="+">+</button>
+            <button class="btn" data-value="-">-</button>
+            <button class="btn" data-value="*">*</button>
+            <button class="btn" data-value="/">/</button>
         </div>
         <!-- /.calc__ui-right -->
     </div>
     <!-- /.calc__ui -->
 </div>
 <!-- /.calc -->
-<div>
+<div class="info">
     <h1>Результат: <span id="result"></span></h1>
 </div>
 <script src="app.js"></script>

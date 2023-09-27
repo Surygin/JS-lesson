@@ -4,13 +4,18 @@ const num2 = document.getElementById('num2');
 const inputsNum = document.getElementsByClassName('inputNum');
 const operationsBtn = document.getElementsByClassName('btn');
 const result = document.getElementById('result');
-//знаки операций
-const addition = document.getElementById('addition');
-const subtraction = document.getElementById('subtraction');
-const multiplication = document.getElementById('multiplication');
-const division = document.getElementById('division');
+const lastResult = document.getElementById('lastResult');
 //Масив чисел для проверки ввода
 const arrNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+//Объект для хранения последней операции
+const lastOperation = {
+    result: '',
+    text: ''
+}
+
+addEventListener('load', ()=>{
+    getLastOperation()
+})
 
 // Очистка поля ввода от лишних символов
 function checkNumber(elem){
@@ -34,21 +39,54 @@ function getValueBtn(el){
     return el.getAttribute('data-value');
 }
 
+function resetInput(){
+    num1.value = '';
+    num2.value = '';
+}
+
+function saveLastOperation(btn){
+    lastOperation.result = result.innerText;
+    lastOperation.text = `${num1.value} ${getValueBtn(btn)} ${num2.value} = `;
+    localStorage.setItem('result', JSON.stringify(lastOperation));
+}
+
+function getLastOperation(){
+    const result = JSON.parse(localStorage.getItem('result'));
+    lastResult.innerText = result.text + result.result;
+    return JSON.parse(localStorage.getItem('result'));
+}
+
 for (const el of operationsBtn) {
     el.addEventListener('click', ()=>{
-        switch (getValueBtn(el)){
-            case '+':
-                result.innerText = Number(num1.value) + Number(num2.value);
-                break;
-            case '-':
-                result.innerText = Number(num1.value) - Number(num2.value);
-                break;
-            case '*':
-                result.innerText = Number(num1.value) * Number(num2.value);
-                break;
-            case '/':
-                result.innerText = Number(num1.value) / Number(num2.value);
-                break;
+        if ((num1.value.length > 0) && (num2.value.length > 0)) {
+            switch (getValueBtn(el)){
+                case '+':
+                    result.innerText = Number(num1.value) + Number(num2.value);
+                    saveLastOperation(el);
+                    getLastOperation();
+                    resetInput();
+                    break;
+                case '-':
+                    result.innerText = Number(num1.value) - Number(num2.value);
+                    saveLastOperation(el);
+                    getLastOperation();
+                    resetInput();
+                    break;
+                case '*':
+                    result.innerText = Number(num1.value) * Number(num2.value);
+                    saveLastOperation(el);
+                    getLastOperation();
+                    resetInput();
+                    break;
+                case '/':
+                    result.innerText = Number(num1.value) / Number(num2.value);
+                    saveLastOperation(el);
+                    getLastOperation();
+                    resetInput();
+                    break;
+            }
+        }else{
+            alert('Оба поля должны быть заполнены')
         }
     })
 }
